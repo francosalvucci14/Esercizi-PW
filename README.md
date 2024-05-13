@@ -5,4 +5,4 @@ Here I will put all the exercises seen in class plus those done by me, pertainin
 Currently the repositories are divided as follows :
 - [HTML-CSS](HTML-CSS/) : contains all the exercises done on html and css
 - [JavaScript](JavaScript/) : contains all the exercises done on JS
-    - [JS-Asynchronous](JavaScript/JS-Asynchronous) : contains the examples on AJAX, Fetch and XMLHttpRequest
+    - [JS-Asynchronous](JavaScript/JS-Asincrono) : contains the examples on AJAX, Fetch and XMLHttpRequest
