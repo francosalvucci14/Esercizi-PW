@@ -8,6 +8,9 @@ function caricaImmagine() {
         dogImage.alt = 'Immagine di Cane';
         document.getElementById('dog-image').innerHTML = '';
         document.getElementById('dog-image').appendChild(dogImage);
+	console.log("Ho fetchato le API correttamente")
     })
     .catch(error => console.error('Si è verificato un errore:', error));
 }
+
+
