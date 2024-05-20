@@ -17,7 +17,7 @@
             console.log(data);
             data.forEach((element) => {
               const p = document.createElement("p");
-              p.innerText = "Prof." + element.docente;
+              p.innerText = "Prof." + element.docente+" Corso: "+element.corso;
               prof.appendChild(p);
             });
           });
