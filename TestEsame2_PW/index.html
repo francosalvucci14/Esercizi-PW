@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esame</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 onclick="drawSquare()">Esame del 18 luglio</h1>
+        </header>
+        <main id="main-container">
+            <!--Contenuto-->
+        </main>
+        <footer>Copyright</footer>
+    </div>
+    <script>
+        let jsonData = [];
+        window.onload = async function(){
+            const response = await fetch("colori.json");
+            jsonData = await response.json();
+            jsonData.forEach(item => console.log(item));
+        }
+        function drawSquare(){
+            const mainContainer = document.getElementById("main-container");
+            mainContainer.innerHTML = ''; /*per pulire i quadrati precedenti*/
+            jsonData.forEach(item => {
+                const square = document.createElement("div");
+                square.style.width = "10%";
+                square.style.height = "10%";
+                square.style.backgroundColor = item.colore;
+
+                const left = Math.min(item.pos_orizz,90) //per evitare overflow
+                const top = Math.min(item.pos_vert,90)
+                square.style.left = left + "%";
+                square.style.top = top + "%";
+                square.style.position = "absolute";
+                square.addEventListener('click',(e)=>e.target.remove());
+                mainContainer.appendChild(square);
+            });
+        }
+    </script>
+</body>
+</html>
