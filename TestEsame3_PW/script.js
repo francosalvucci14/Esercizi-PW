@@ -13,12 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     // Toggle menu visibility and color change
-    const header = document.querySelector('header h1');
-    header.addEventListener('click', () => {
+    const nav_menu = document.querySelector('header p');
+    nav_menu.addEventListener('click', () => {
         if (window.innerWidth < 1000) {
             const menu = document.getElementById('menu');
             menu.classList.toggle('hidden');
-            header.style.color = header.style.color === 'red' ? 'black' : 'red';
+            nav_menu.style.cursor = "pointer"
+            nav_menu.style.color = nav_menu.style.color === 'red' ? 'black' : 'red';
         }
     });
 

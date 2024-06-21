@@ -22,6 +22,10 @@ h1 {
     padding: 10px;
 }
 
+h2 {
+	cursor:pointer;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
