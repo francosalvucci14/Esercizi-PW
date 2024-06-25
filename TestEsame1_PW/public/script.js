@@ -4,16 +4,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
-        const data = await response.json();
-        console.log('Data received:', data);
+        const resp_json = await response.json();
+        console.log('Data received:', resp_json);
 
-        const citations = data.citations;
-        if (!Array.isArray(citations)) {
-            throw new Error('Received citations data is not an array');
-        }
-
+        const citations = resp_json.data;        
+        console.log(citations)
         const listContainer = document.getElementById('list-container');
-        citations.forEach(citation => {
+        citations.citations.forEach((citation) => {
             const item = document.createElement('div');
             item.className = 'list-item';
             item.textContent = citation.ID;

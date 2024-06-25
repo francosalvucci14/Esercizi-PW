@@ -50,10 +50,12 @@ const morgan = require("morgan");
 const fs = require("fs");
 const path = require("path");
 const app = express();
+const cors = require("cors");
 
 app.use(morgan("dev"));
 app.use(express.json()); // for parsing application/json
 
+app.use(cors())
 // Leggi il file JSON contenente le citazioni
 let citations;
 try {
